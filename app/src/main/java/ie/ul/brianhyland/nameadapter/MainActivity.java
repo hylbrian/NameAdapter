@@ -27,11 +27,19 @@ public class MainActivity extends AppCompatActivity {
 
         //TODO: Connect the recycleVew to our NameAdaper
 
+        final NameAdapter nameAdapter = new NameAdapter();
+        recyclerView.setAdapter(nameAdapter);
+
+        nameAdapter.addName();
+        nameAdapter.addName();
+        nameAdapter.addName();
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //TODO: Add a name row
+                nameAdapter.addName();
             }
         });
     }
